@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: rural-armadillo-go-gitops
+  description: This is GitOps manifest for rural-armadillo-go   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-name: rural-armadillo-go
+    janus-idp.io/tekton: rural-armadillo-go 
+    backstage.io/kubernetes-id: rural-armadillo-go 
+    backstage.io/techdocs-ref: dir:. 
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:rural-armadillo-go
